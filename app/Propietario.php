@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Propietario extends Model
 {
     //
-    protected $table='id_propietario';
+    protected $table='propietarios';
     protected $primaryKey='id_propietario';
     public $with=['mascotas'];
 
