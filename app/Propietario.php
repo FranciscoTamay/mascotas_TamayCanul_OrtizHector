@@ -9,6 +9,7 @@ class Propietario extends Model
     //
     protected $table='id_propietario';
     protected $primaryKey='id_propietario';
+    public $with=['mascotas'];
 
     public $incrementing=true;
     public $timestamps=false;
@@ -22,6 +23,9 @@ class Propietario extends Model
         'direccion',
         'telfono'
     ];
-    
+
+    public function mascotas(){
+        return $this->hasMany(Mascota::class,'id_propietario','id_propietario');
+    }
 
 }
