@@ -10,7 +10,7 @@ class Mascota extends Model
     protected $primaryKey='id_mascota';
 
     //especificamos las relaciones
-    public $with=['especie'];
+    public $with=['especie','raza'];
     //define si la llave primaria es o no numero autoincrementable
     public $incrementing= true; 
 
@@ -31,6 +31,11 @@ class Mascota extends Model
     public function especie()
     {
         return $this->belongsTo(Especie::class, 'id_especie','id_especie');
+    }
+
+    public function raza()
+    {
+        return $this->belongsTo(Raza::class, 'id_raza','id_raza');
     }
 
 
