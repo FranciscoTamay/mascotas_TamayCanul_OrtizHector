@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Raza; extends Model
+class Raza extends Model
 {
     //
     protected $tabla='raza';
