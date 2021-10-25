@@ -12,6 +12,7 @@ new Vue({
 		edad:null,
 		editando:0,
 		indice:0,
+		buscar:'',
 		propietarios:[{nombre:'Joel',apellido:'Gomez',edad:21},
 			{nombre:'Alfonso',apellido:'Hernandez',edad:32},
 			{nombre:'Jack',apellido:'Hanma',edad:28},
@@ -130,6 +131,23 @@ new Vue({
 	// Fin de los metodos	
 	},
 
+	// Inicio de computed 
+
+	computed:{
+		filtroPropietarios:function(){
+			return this.propietarios.filter((propietario)=>{
+			return propietario.nombre.toLowerCase().match(this.buscar.toLowerCase().trim()) || 
+				   propietario.apellido.toLowerCase().match(this.buscar.toLowerCase().trim())
+			});
+		},
+
+		numeroPropietarios:function(){
+			var num=0;
+			num=this.propietarios.length;
+			return num;
+		},
+	},
+	// fin de computed
 		
 
 

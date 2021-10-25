@@ -39,6 +39,13 @@
 				<button class="btn btn-info" @click="cancelar()">Cancelar</button>
 			</div>
 		</div>
+		<!--Filtro de para buscar propietario-->
+		<br>
+		<div class="row">
+			<div class="col-md-6">
+				<input type="text" class="form-control" placeholder="Escribe el nombre o el apellido del propietario" v-model="buscar">
+			</div>
+		</div>
 		<!--Imprimir datos de la tabla para propietarios-->
 		<br>
 		<table class="table table-borderd">
@@ -69,7 +76,11 @@
 
 		</table>
 		<!--Fin de la tabla-->
-
+		<div class="row">
+			<div class="col-md-8">
+				<h2>Tenemos: {{numeroPropietarios}} Propietarios</h2>
+			</div>
+		</div>
 		
 
 
