@@ -24,6 +24,7 @@ new Vue({
 	methods:{
 		//Metodo para agregar a un nuevo propietario
 		agregarPropietario:function(){
+			if (this.nombre && this.apellido && this.edad){
 			//se construye un objeto como el de propietarios para que sea insertado en el array
 			var unPropietario={nombre:this.nombre,apellido:this.apellido,edad:this.edad};
 
@@ -33,6 +34,27 @@ new Vue({
 
 			//enviamos el foco al primer componente/nombre propietario
 			this.$refs.nombre.focus();
+
+			// se envia el mensaje de confirmacion 
+			Swal.fire({
+  		position: 'top-end',
+  		icon: 'success',
+  		title: 'EL propietario se agrego correctamente ',
+  		showConfirmButton: false,
+  		timer: 2000
+		})
+			}
+
+			else 
+
+				Swal.fire({
+  		position: 'top-end',
+  		icon: 'error',
+  		title: 'Debe de ingresar todos los datos',
+  		showConfirmButton: false,
+  		timer: 2000
+		})
+
 		},
 
 		//Metodo para limpiar los campos en donde se escribe para agregar a un propietario
@@ -67,19 +89,45 @@ new Vue({
 			this.limpiarCampo();
 			//indicamos que terminamos de editar al darle al boton de agregar
 			this.editando=0;
+			Swal.fire({
+  		position: 'top-end',
+  		icon: 'info',
+  		title: 'Los cambios fueron realizados',
+  		showConfirmButton: false,
+  		timer: 2000
+			})
+			// fin de mensaje 
 		},
 
 		//Metodo para eliminar propietario
 		eliminarPropietario:function(pos){
-		var pregunta=confirm('Esta seguro de eliminar?');
+		Swal.fire({
+  		title: 'Esta seguro de eliminar?',
+  		text: "No podra deshacer los cambios!",
+  		icon: 'warning',
+  		showCancelButton: true,
+ 	 	confirmButtonColor: '#3085d6',
+  		cancelButtonColor: '#d33',
+  		confirmButtonText: 'Si, eliminalo!'
+		}).then((result) => {
+  		if (result.isConfirmed) {
+  			//eliminamos el propietario seleccionado
+  			this.propietarios.splice(pos,1);
 
-			if(pregunta)
-				console.Log('Voy a eliminar');
-
-		this.mascotas.splice(pos,1);
+    	Swal.fire(
+      	'Eliminado!',
+      	'El propietario fue eliminado.',
+      	'success'
+    		)
+  		}
+	})
+		//fin de ventana de sweet alert
+		
 				
 		},
 
+
+	// Fin de los metodos	
 	},
 
 		
