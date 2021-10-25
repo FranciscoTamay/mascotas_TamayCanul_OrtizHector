@@ -137,9 +137,10 @@ new Vue({
 		filtroPropietarios:function(){
 			return this.propietarios.filter((propietario)=>{
 			return propietario.nombre.toLowerCase().match(this.buscar.toLowerCase().trim()) || 
-				   propietario.apellido.toLowerCase().match(this.buscar.toLowerCase().trim())
+				   propietario.apellido.toLowerCase().match(this.buscar.toLowerCase().trim()) 
 			});
 		},
+
 
 		numeroPropietarios:function(){
 			var num=0;
