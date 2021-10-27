@@ -15,9 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('mascotas', function () {
+    return view('mascotas');
+});
+
 Route::apiResource('apiMascota','MascotaController');
 Route::apiResource('apiEspecie','EspecieController');
 Route::apiResource('apiPropietario','PropietarioController');
 Route::apiResource('apiRaza','RazaController');
+
+
+
+
 
  
