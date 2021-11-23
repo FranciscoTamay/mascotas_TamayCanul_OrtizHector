@@ -11,7 +11,7 @@ class Especie extends Model
     protected $primaryKey='id_especie';
 
 
-    public $incrementing=true;
+    public $incrementing=false;
     public $timestamps=false;
 
     public $fillable= [

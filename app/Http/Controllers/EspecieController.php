@@ -24,7 +24,7 @@ class EspecieController extends Controller
      */
     public function create()
     {
-        //
+        return view('especies');
     }
 
     /**
@@ -35,7 +35,12 @@ class EspecieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $especies=new Especie();
+
+        $especies->id_especie=19;
+        $especies->especie=$request->get('especie');
+
+        $especies->save();
     }
 
     /**
@@ -46,7 +51,7 @@ class EspecieController extends Controller
      */
     public function show($id)
     {
-        //
+        return $especies=Especie::find($id);
     }
 
     /**
@@ -57,19 +62,19 @@ class EspecieController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
+
     public function update(Request $request, $id)
     {
-        //
+        $especies=Especie::find($id);
+
+        $especies->id_especie=$request->get('id_especie');
+        $especies->especie=$request->get('especie');
+
+        $especies->update();
     }
 
     /**
@@ -80,6 +85,7 @@ class EspecieController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $especie=Especie::find($id);
+        $especie->delete();
     }
 }

@@ -4,7 +4,7 @@ new Vue({
 	el:"#propietarios",
 
 	//seccion de variables y constantes
-	data:{
+	data:{ 
 
 		mensaje:'Zona de propietarios',
 		nombre:'',
