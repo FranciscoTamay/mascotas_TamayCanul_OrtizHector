@@ -23,10 +23,15 @@ Route::get('especies', function () {
     return view('especies'); 
 }); 
 
+Route::get('ventas', function () {
+    return view('ventas');
+});
+
 Route::apiResource('apiMascota','MascotaController');
 Route::Resource('apiEspecie','EspecieController');
 Route::apiResource('apiPropietario','PropietarioController');
 Route::apiResource('apiRaza','RazaController');
+Route::apiResource('apiProducto','ProductoController');
 
 
 
