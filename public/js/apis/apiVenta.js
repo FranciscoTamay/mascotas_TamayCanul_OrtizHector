@@ -17,6 +17,8 @@ new Vue({
 		mensaje:'Hola Mundo',
 		sku:'',
 		ventas:[],
+		cantidades:[],
+		cant:1,
 
 
 	},
@@ -45,6 +47,7 @@ new Vue({
 
 				
 				this.ventas.push(producto);
+				this.cantidades.push(1);
 				this.sku='';
 
 			});
