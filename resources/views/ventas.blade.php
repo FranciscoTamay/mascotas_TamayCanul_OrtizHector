@@ -7,20 +7,49 @@
  			<div class="row">
  				<div class="col-md-4">
 					<div class="input-group mb-3">
-  						<input type="text" class="form-control" placeholder="Introduzca el codigo del producto" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  						<input type="text" class="form-control" placeholder="Introduzca el codigo del producto" aria-label="Recipient's username" aria-describedby="basic-addon2" v-model="sku" v-on:keyup.enter="buscarProducto()">
   							<div class="input-group-append">
-    					<span class="input-group-text" id="basic-addon2">Buscar</span>
+    					<button class="btn btn-outline-secondary" type="button" @click="buscarProducto()">Buscar</button >
   							</div>
 					</div>
 				</div>
  					
+ 			</div> <!--Fin de div row-->
+
+ 			<div class="row">
+
+ 				<div class="col-md-12">
+
+ 					<table class="table table-bordered">
+ 						<thead>
+ 							<th>SKU</th>
+ 							<th>NOMBRE</th>
+ 							<th>PRECIO</th>
+ 							<th>CANTIDAD</th>
+ 							<th>TOTAL</th>
+ 						</thead>
+
+ 						<tbody>
+ 							<tr v-for="venta in ventas">
+ 								<td>@{{venta.sku}}</td>
+ 								<td>@{{venta.nombre}}</td>
+ 								<td>@{{venta.precio}}</td>
+ 								<td>@{{venta.cantidad}}</td>
+ 								<td>@{{venta.total}}</td>
+ 								
+ 							</tr>
+ 						</tbody>
+ 						
+ 					</table>
+ 					
+ 				</div>
+ 				
  			</div>
  				
- 		</div>
+ 		</div> <!--Fin de div container-->
  			
- 	</div>
- 		
- 	<!-- </div> -->
+ 	</div><!--Fin de VUE-->
+
 
 
 
