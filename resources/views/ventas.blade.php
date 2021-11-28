@@ -79,7 +79,12 @@
 
 					<tr>
 						<th style="background: #ffff66">TOTAL</th>
-						<td>$SUMATOTAL</td>
+						<td><b>$ @{{granTotal}}</b></td>
+					</tr>
+
+					<tr>
+						<th style="background: #ffff66">Articulos</th>
+						<td></td>
 					</tr>
 					
 				</table>

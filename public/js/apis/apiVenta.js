@@ -93,6 +93,13 @@ new Vue({
  			return auxIva.toFixed(1);
 
  		},
+ 		//fin del computed iva
+
+ 		granTotal(){
+ 			var auxTotal=0;
+ 			auxTotal=this.auxSubtotal*1.16;
+ 			return auxTotal.toFixed(1);
+ 		},
  	},
 	
 
