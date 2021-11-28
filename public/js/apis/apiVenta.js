@@ -17,7 +17,7 @@ new Vue({
 		mensaje:'Hola Mundo',
 		sku:'',
 		ventas:[],
-		cantidades:[],
+		cantidades:[1,1,1,1,1,1,1,1,1,1],
 		cant:1,
 
 
@@ -57,6 +57,17 @@ new Vue({
 
 	},
  //FIN DE METHODS
+
+ 	computed:{
+ 		totalProducto(){
+ 			return (id)=>{
+ 				var total = 0;
+ 				if (this.cantidades[id]!=null)
+ 				total=this.ventas[id].precio*this.cantidades[id];
+ 				return total.toFixed(1);
+ 			}
+ 		},
+ 	},
 	
 
 

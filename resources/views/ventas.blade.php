@@ -37,8 +37,8 @@
  								<td>@{{venta.sku}}</td>
  								<td>@{{venta.nombre}}</td>
  								<td>@{{venta.precio}}</td>
- 								<td><input type="number" v-model.number="cantidades[index]" min="1"></td>
- 								<td>@{{venta.total}}</td>
+ 								<td><input type="number" v-model.number="cantidades[index]"></td>
+ 								<td>@{{totalProducto(index)}}</td>
  								
  							</tr>
  						</tbody>
@@ -55,12 +55,15 @@
  </div>	
 <!-- FIN DE CARD -->
 
+@{{cantidades}}
+
 <div class="row">
 	<div class="col-md-8"></div>
 
+<div class="col-md-4">	
+
 	<div class="card">
 		<div class="card-body">
-			<div class="col-md-4">
 				<table class="table table-bordered table-condensed">
 					<tr>
 						<th style="background: #ffff66">Subtotal</th>
@@ -78,9 +81,12 @@
 					</tr>
 					
 				</table>
-			</div>		
 		</div>
+		<!-- FIN DEL CARD BODY -->
 	</div>
+	<!-- FIN DEL CARD -->
+</div>	
+	<!-- FIN DEL COL MD 4 -->	
 	
 </div>
  				
