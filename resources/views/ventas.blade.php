@@ -56,6 +56,8 @@
 <!-- FIN DE CARD -->
 
 @{{cantidades}}
+<hr>
+@{{ventas}}
 
 <div class="row">
 	<div class="col-md-8"></div>
@@ -67,7 +69,7 @@
 				<table class="table table-bordered table-condensed">
 					<tr>
 						<th style="background: #ffff66">Subtotal</th>
-						<td>$SUBTOTAL</td>
+						<td>$ @{{subTotal}}</td>
 					</tr>
 
 					<tr>

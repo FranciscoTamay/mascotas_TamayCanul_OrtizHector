@@ -64,8 +64,22 @@ new Vue({
  				var total = 0;
  				if (this.cantidades[id]!=null)
  				total=this.ventas[id].precio*this.cantidades[id];
+ 				//se actualiza el total de producto en el array de ventas
+ 				this.ventas[id].total=total;
+ 				//actualiza la cantidad en el array de ventas
+ 				this.ventas[id].cantidad=this.cantidades[id];
  				return total.toFixed(1);
  			}
+ 		},
+ 		//fin de total producto
+ 		subTotal(){
+ 			var total=0;
+
+ 			for (var i = this.ventas.length - 1; i >= 0; i--) {
+ 				total=total+this.ventas[i].total;
+ 			}
+
+ 			return total.toFixed(1);
  		},
  	},
 	
