@@ -9,12 +9,15 @@
 					<div class="input-group mb-3">
   						<input type="text" class="form-control" placeholder="Introduzca el codigo del producto" aria-label="Recipient's username" aria-describedby="basic-addon2" v-model="sku" v-on:keyup.enter="buscarProducto()">
   							<div class="input-group-append">
-    					<button class="btn btn-outline-secondary" type="button" @click="buscarProducto()">Buscar</button >
+    					<button class="btn btn-primary" type="button" @click="buscarProducto()">Buscar</button >
   							</div>
 					</div>
 				</div>
  					
  			</div> <!--Fin de div row-->
+
+<div class="card">
+	<div class="card-body">
 
  			<div class="row">
 
@@ -22,11 +25,11 @@
 
  					<table class="table table-bordered">
  						<thead>
- 							<th>SKU</th>
- 							<th>NOMBRE</th>
- 							<th>PRECIO</th>
- 							<th>CANTIDAD</th>
- 							<th>TOTAL</th>
+ 							<th style="background: #ffff66;">SKU</th>
+ 							<th style="background: #ffff66;">NOMBRE</th>
+ 							<th style="background: #ffff66;">PRECIO</th>
+ 							<th style="background: #ffff66;">CANTIDAD</th>
+ 							<th style="background: #ffff66;">TOTAL</th>
  						</thead>
 
  						<tbody>
@@ -45,6 +48,41 @@
  				</div>
  				
  			</div>
+ 			<!-- Fin del ROW -->
+
+ 	</div>	
+ 	<!-- FIN DEL CARD BODY -->
+ </div>	
+<!-- FIN DE CARD -->
+
+<div class="row">
+	<div class="col-md-8"></div>
+
+	<div class="card">
+		<div class="card-body">
+			<div class="col-md-4">
+				<table class="table table-bordered table-condensed">
+					<tr>
+						<th style="background: #ffff66">Subtotal</th>
+						<td>$SUBTOTAL</td>
+					</tr>
+
+					<tr>
+						<th style="background: #ffff66">IVA</th>
+						<td>$IVA</td>
+					</tr>
+
+					<tr>
+						<th style="background: #ffff66">TOTAL</th>
+						<td>$SUMATOTAL</td>
+					</tr>
+					
+				</table>
+			</div>		
+		</div>
+	</div>
+	
+</div>
  				
  		</div> <!--Fin de div container-->
  			
