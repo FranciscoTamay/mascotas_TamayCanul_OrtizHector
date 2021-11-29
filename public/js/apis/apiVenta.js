@@ -100,6 +100,15 @@ new Vue({
  			auxTotal=this.auxSubtotal*1.16;
  			return auxTotal.toFixed(1);
  		},
+
+ 		noArticulos(){
+ 			var acum=0;
+ 			for (var i = this.ventas.length - 1; i >= 0; i--) {
+ 				acum=acum+this.ventas[i].cantidad;
+ 			}
+
+ 			return acum;
+ 		},
  	},
 	
 

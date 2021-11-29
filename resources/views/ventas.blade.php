@@ -84,7 +84,7 @@
 
 					<tr>
 						<th style="background: #ffff66">Articulos</th>
-						<td></td>
+						<td>@{{noArticulos}}</td>
 					</tr>
 					
 				</table>
